@@ -1,0 +1,34 @@
+browser-use● Pasta test_reais/ criada com 8 bots de exemplo:                                     
+                                                                                      
+  ┌────────────────────┬───────────────────────────────────────────────────────────┐  
+  │        Bot         │                         O que faz                         │  
+  ├────────────────────┼───────────────────────────────────────────────────────────┤  
+  │ google_search.py   │ Pesquisa no Google, extrai resultados com links           │  
+  ├────────────────────┼───────────────────────────────────────────────────────────┤  
+  │ wikipedia.py       │ Navega artigo da Wikipedia, extrai seccoes e segue links  │  
+  ├────────────────────┼───────────────────────────────────────────────────────────┤  
+  │ github_trending.py │ Scraping de repos trending no GitHub                      │
+  ├────────────────────┼───────────────────────────────────────────────────────────┤
+  │ formulario.py      │ Preenche formulario de pratica (demoqa.com)               │
+  ├────────────────────┼───────────────────────────────────────────────────────────┤
+  │ gravar_e_replay.py │ Grava acoes do usuario + replay (padrao ou adaptativo)    │
+  ├────────────────────┼───────────────────────────────────────────────────────────┤
+  │ dom_explorer.py    │ Explora DOM de qualquer site com serializer [N]           │
+  ├────────────────────┼───────────────────────────────────────────────────────────┤
+  │ network_spy.py     │ Espia APIs internas de qualquer site via network learning │
+  ├────────────────────┼───────────────────────────────────────────────────────────┤
+  │ multi_acoes.py     │ Executa acoes escritas em JSON a mao (sem gravar)         │
+  └────────────────────┴───────────────────────────────────────────────────────────┘
+
+  Uso:
+  cd test_reais
+  python google_search.py "machine learning"
+  python wikipedia.py "Artificial intelligence"
+  python github_trending.py python
+  python gravar_e_replay.py gravar          # grava
+  python gravar_e_replay.py adaptativo      # replay sem depender de id/class
+  python dom_explorer.py https://github.com -v
+  python network_spy.py https://github.com/trending
+  python multi_acoes.py wikipedia
+
+✻ Worked for 4m 34s  

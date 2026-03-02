@@ -1,0 +1,80 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+
+# Debug output (generated at runtime)
+debug_screenshots/
+debug_replay/
+debug_run/
+debug_multi/
+debug_google/
+debug_network/
+debug_adaptive/
+test_reais/debug_*/
+test_reais/*.png
+test_reais/*.json
+!test_reais/recording.json
+
+# Downloads
+downloads/
+
+# Knowledge store
+.smartwright_knowledge.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup (don't push backup to remote)
+backup_v*/
+
+# Browser profiles (generated at runtime)
+.smartwright_profile/
+
+# Claude settings
+.claude/
+
+# Legacy/temp files
+._qwen.bak
+*.bak
+recording.gif
+
+# Generated screenshots and test output
+test_debug_screenshots/
+test_results.json
+*.png
+
+# Script-specific temp dirs inside test_reais
+test_reais/test_reais/
+
+# Standalone scripts (not part of the library)
+qwen.py
+qwen-e.py
+qwen-cap.py
+qwen.log
+google-pesquisa.py
+v.py

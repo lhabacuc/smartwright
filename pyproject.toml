@@ -1,0 +1,84 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "smartwright"
+version = "0.4.0"
+description = "Adaptive web automation engine — intent-driven, type+index, replay, DOM serializer, network learning"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "smartwright contributors"},
+]
+keywords = ["playwright", "automation", "web", "scraping", "testing", "replay", "adaptive"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Testing",
+    "Topic :: Internet :: WWW/HTTP :: Browsers",
+    "Framework :: AsyncIO",
+    "Typing :: Typed",
+]
+dependencies = [
+    "playwright>=1.45,<2.0",
+]
+
+[project.optional-dependencies]
+ai = ["groq>=0.9.0,<1.0"]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21",
+    "pytest-cov>=4.0",
+    "ruff>=0.4",
+    "mypy>=1.8",
+]
+
+[project.scripts]
+smartwright = "smartwright.cli:main"
+
+[project.urls]
+Documentation = "https://github.com/lhabacuc/smartwright/tree/main/docs"
+Repository = "https://github.com/lhabacuc/smartwright"
+Changelog = "https://github.com/lhabacuc/smartwright/blob/main/CHANGELOG.md"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["smartwright*"]
+
+[tool.setuptools.package-data]
+smartwright = ["py.typed"]
+
+# ── Ruff ──────────────────────────────────────────────────────────────
+[tool.ruff]
+target-version = "py310"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+ignore = ["E501", "B008", "SIM108"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["smartwright"]
+
+# ── Pytest ────────────────────────────────────────────────────────────
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
+
+# ── Mypy ──────────────────────────────────────────────────────────────
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
